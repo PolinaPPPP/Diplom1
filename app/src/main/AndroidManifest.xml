@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Test2"
         tools:targetApi="31">
         <activity
+            android:name=".GCList"
+            android:exported="false" />
+        <activity
             android:name=".Userlist"
             android:exported="false" />
         <activity
