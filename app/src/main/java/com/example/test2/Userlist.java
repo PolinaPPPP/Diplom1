@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,10 +20,12 @@ public class Userlist extends AppCompatActivity {
     ArrayList<String> name, email, age;
     DBHelper DB;
     MyAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userlist);
+
         DB = new DBHelper(this);
         name = new ArrayList<>();
         email = new ArrayList<>();
@@ -29,6 +35,8 @@ public class Userlist extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         displaydata();
+
+
     }
 
     private void displaydata()
@@ -49,4 +57,10 @@ public class Userlist extends AppCompatActivity {
             }
         }
     }
+
+    public void onMyButtonClick(View view){
+        startActivity(new Intent(Userlist.this, GK.class));
+    }
+
+
 }
