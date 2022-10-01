@@ -7,10 +7,6 @@
     app:cardCornerRadius="16dp"
     android:layout_margin="16dp"
     android:backgroundTint="#efefef">
-
-
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -82,12 +78,7 @@
                 style="bold"/>
         </LinearLayout>
 
-       <ImageButton
-           android:onClick="onMyButtonClick"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="15dp"
-           android:src="@drawable/icon"/>
+
     </LinearLayout>
 
 

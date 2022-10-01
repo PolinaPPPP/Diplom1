@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -15,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Currency;
 
-public class Userlist extends AppCompatActivity {
+public class Userlist extends AppCompatActivity implements RecyclerInterface{
     RecyclerView recyclerView;
     ArrayList<String> name, email, age;
     DBHelper DB;
@@ -31,10 +32,13 @@ public class Userlist extends AppCompatActivity {
         email = new ArrayList<>();
         age = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerview);
-        adapter = new MyAdapter(this, name, email, age);
+        adapter = new MyAdapter(this, name, email, age, this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         displaydata();
+
+
+
 
 
     }
@@ -58,9 +62,9 @@ public class Userlist extends AppCompatActivity {
         }
     }
 
-    public void onMyButtonClick(View view){
+
+    @Override
+    public void onItemClick(int position) {
         startActivity(new Intent(Userlist.this, GK.class));
     }
-
-
 }
